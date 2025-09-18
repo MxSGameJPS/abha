@@ -1,0 +1,79 @@
+.abhaSection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 3rem;
+  background: transparent;
+  width: 100%;
+}
+
+.collage {
+  position: relative;
+  width: 640px;
+  min-width: 460px;
+  height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comico {
+  position: absolute;
+  left: 0;
+  top: 23px;
+  width: 820px;
+  opacity: 0.45;
+  z-index: 1;
+  filter: blur(0.5px) drop-shadow(0 2px 8px #212c4280);
+}
+.comico2 {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  width: 820px;
+  opacity: 0.45;
+  z-index: 1;
+  filter: blur(0.5px) drop-shadow(0 2px 8px #212c4280);
+}
+.sentado {
+  position: absolute;
+  left: 40%;
+  top: 165px;
+  width: 680px;
+  transform: translateX(-50%);
+  z-index: 2;
+  filter: drop-shadow(0 4px 16px #e85d9580);
+}
+
+.textBox {
+  max-width: 800px;
+  border-radius: 16px;
+  color: #212c42;
+  font-size: 1.15rem;
+}
+.textBox h2 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 2rem;
+  color: #e85d95;
+  margin-bottom: 1.2rem;
+}
+.textBox p {
+  margin-bottom: 1.1rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .abhaSection {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1vw;
+  }
+  .collage {
+    width: 220px;
+    height: 300px;
+  }
+  .textBox {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+}
