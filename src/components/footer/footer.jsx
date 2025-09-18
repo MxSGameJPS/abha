@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <span>
         © {new Date().getFullYear()} ABHA — Associação Brasileira dos Héteros
-        Afeminados. Feito com ♥ por Leandro Leitte.
+        Afeminados. Feito com ♥ por Saulo Pavanello.
       </span>
     </footer>
   );
