@@ -1,0 +1,64 @@
+.header {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  padding: 1.2rem 3vw;
+  background: transparent;
+  backdrop-filter: blur(4px);
+}
+
+.logo {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, #212c42, #e85d95, #eae0c8, #212c42);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 8px #eae0c880;
+  animation: gradient-move 4s ease-in-out infinite;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  color: #212c42;
+  font-size: 1.1rem;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+.navButton:hover {
+  background: #e85d95;
+  color: #fff;
+}
