@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import styles from "./formulario.module.css";
 
-const FORMSPREE_URL = "https://formspree.io/f/xrbanakw";
-
 export default function Formulario() {
-  const [enviado, setEnviado] = useState(false);
-
+  const [state, handleSubmit] = useForm("xrbanakw");
   return (
     <div className={styles.formContainer}>
       <h1 className={styles.tituloPrincipal}>
@@ -26,23 +24,19 @@ export default function Formulario() {
           a diferença entre um Merlot e um Cabernet. Boa sorte.
         </p>
       </div>
-      {enviado ? (
+      {state.succeeded ? (
         <div className={styles.sucesso}>
           <p>Solicitação enviada com sucesso! Aguarde nosso contato.</p>
         </div>
       ) : (
-        <form
-          className={styles.form}
-          action={FORMSPREE_URL}
-          method="POST"
-          onSubmit={() => setEnviado(true)}
-        >
+        <form className={styles.form} onSubmit={handleSubmit}>
           <fieldset className={styles.secao}>
             <legend>Seção 1: Identificação Pessoal e Aptidões Básicas</legend>
             <label>
               Nome Completo:
               <input type="text" name="nome" required />
             </label>
+            <ValidationError prefix="Nome" field="nome" errors={state.errors} />
             <label>Pronome de Tratamento Preferido:</label>
             <div className={styles.radioGroup}>
               <label>
@@ -260,17 +254,17 @@ export default function Formulario() {
             <legend>Seção 4: Juramento e Termo de Compromisso</legend>
             <div className={styles.checkboxGroup}>
               <label>
-                <input type="checkbox" name="juramento1" value="sim" required />
+                <input type="checkbox" name="juramento1" value="sim" required />{" "}
                 ...nunca julgar um amigo que pede a carne "bem passada", embora
                 isso lhe cause dor física e espiritual;
               </label>
               <label>
-                <input type="checkbox" name="juramento2" value="sim" required />
+                <input type="checkbox" name="juramento2" value="sim" required />{" "}
                 ...oferecer-se para tirar a foto do grupo, pois sabe enquadrar
                 melhor que os outros;
               </label>
               <label>
-                <input type="checkbox" name="juramento3" value="sim" required />
+                <input type="checkbox" name="juramento3" value="sim" required />{" "}
                 ...e, acima de tudo, entender que a verdadeira força não está em
                 abrir um pote de azeitonas, mas em admitir que você prefere um
                 bom Pinot Noir.
@@ -288,7 +282,11 @@ export default function Formulario() {
             value="Solicitação de entrada na ABHA"
           />
           <input type="hidden" name="_replyto" value="abha.leandro@gmail.com" />
-          <button type="submit" className={styles.enviarBtn}>
+          <button
+            type="submit"
+            className={styles.enviarBtn}
+            disabled={state.submitting}
+          >
             Enviar solicitação
           </button>
         </form>
