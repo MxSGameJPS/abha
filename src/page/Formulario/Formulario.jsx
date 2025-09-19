@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./formulario.module.css";
 
-const FORMSPREE_URL = "https://formspree.io/f/xwkgyyqg";
+const FORMSPREE_URL = "https://formspree.io/f/xrbanakw";
 
 export default function Formulario() {
   const [enviado, setEnviado] = useState(false);
