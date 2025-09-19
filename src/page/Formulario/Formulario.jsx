@@ -40,6 +40,10 @@ export default function Formulario() {
               Nome Completo:
               <input type="text" name="nome" required />
             </label>
+            <label>
+              E-mail para contato:
+              <input type="email" name="email" required />
+            </label>
             <label>Pronome de Tratamento Preferido:</label>
             <div className={styles.radioGroup}>
               <label>
@@ -169,7 +173,7 @@ export default function Formulario() {
               <label>
                 <input
                   type="checkbox"
-                  name="habilidades"
+                  name="habilidades[]"
                   value="Times do Gauchão"
                 />{" "}
                 Sei identificar todos os times do Gauchão só pelo escudo.
@@ -177,7 +181,7 @@ export default function Formulario() {
               <label>
                 <input
                   type="checkbox"
-                  name="habilidades"
+                  name="habilidades[]"
                   value="Sérum de ácido hialurônico"
                 />{" "}
                 Sei identificar o que é um sérum de ácido hialurônico e para que
@@ -186,7 +190,7 @@ export default function Formulario() {
               <label>
                 <input
                   type="checkbox"
-                  name="habilidades"
+                  name="habilidades[]"
                   value="Abrir palmito"
                 />{" "}
                 Consigo abrir um pote de palmito sem pedir ajuda.
@@ -194,7 +198,7 @@ export default function Formulario() {
               <label>
                 <input
                   type="checkbox"
-                  name="habilidades"
+                  name="habilidades[]"
                   value="Opinião look"
                 />{" "}
                 Consigo dar uma opinião sincera (e gentil) sobre o look da minha
@@ -203,7 +207,7 @@ export default function Formulario() {
               <label>
                 <input
                   type="checkbox"
-                  name="habilidades"
+                  name="habilidades[]"
                   value="Playlist sofrência"
                 />{" "}
                 Tenho uma playlist secreta intitulada "Sofrência Pop Anos 2000".
@@ -279,12 +283,6 @@ export default function Formulario() {
             </label>
           </fieldset>
 
-          <input
-            type="hidden"
-            name="_subject"
-            value="Solicitação de entrada na ABHA"
-          />
-          <input type="hidden" name="_replyto" value="abha.leandro@gmail.com" />
           <input
             type="hidden"
             name="_subject"
