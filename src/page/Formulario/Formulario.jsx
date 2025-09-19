@@ -1,9 +1,8 @@
 import React from "react";
-import { useForm, ValidationError } from "@formspree/react";
 import styles from "./formulario.module.css";
 
 export default function Formulario() {
-  const [state, handleSubmit] = useForm("xrbanakw");
+  const [enviado, setEnviado] = React.useState(false);
   return (
     <div className={styles.formContainer}>
       <h1 className={styles.tituloPrincipal}>
@@ -24,19 +23,23 @@ export default function Formulario() {
           a diferença entre um Merlot e um Cabernet. Boa sorte.
         </p>
       </div>
-      {state.succeeded ? (
+      {enviado ? (
         <div className={styles.sucesso}>
           <p>Solicitação enviada com sucesso! Aguarde nosso contato.</p>
         </div>
       ) : (
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form
+          className={styles.form}
+          action="https://formsubmit.co/abha.leandro@gmail.com"
+          method="POST"
+          onSubmit={() => setEnviado(true)}
+        >
           <fieldset className={styles.secao}>
             <legend>Seção 1: Identificação Pessoal e Aptidões Básicas</legend>
             <label>
               Nome Completo:
               <input type="text" name="nome" required />
             </label>
-            <ValidationError prefix="Nome" field="nome" errors={state.errors} />
             <label>Pronome de Tratamento Preferido:</label>
             <div className={styles.radioGroup}>
               <label>
@@ -282,11 +285,13 @@ export default function Formulario() {
             value="Solicitação de entrada na ABHA"
           />
           <input type="hidden" name="_replyto" value="abha.leandro@gmail.com" />
-          <button
-            type="submit"
-            className={styles.enviarBtn}
-            disabled={state.submitting}
-          >
+          <input
+            type="hidden"
+            name="_subject"
+            value="Solicitação de entrada na ABHA"
+          />
+          <input type="hidden" name="_next" value="/obrigado.html" />
+          <button type="submit" className={styles.enviarBtn}>
             Enviar solicitação
           </button>
         </form>
