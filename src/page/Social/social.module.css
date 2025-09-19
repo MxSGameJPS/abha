@@ -1,0 +1,94 @@
+/* Página Social - estilos modernos e responsivos */
+.socialSection {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #f8fafc;
+  padding: 10.5rem 1rem 4rem 1rem;
+}
+
+.abhaImg {
+  width: 220px;
+  max-width: 90vw;
+  margin-bottom: 2.2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.titulo {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 2.2rem;
+  text-align: center;
+}
+
+.linksGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  background: #fff;
+  border-radius: 2.5rem;
+  padding: 1.1rem 2.2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  text-decoration: none;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  transition: transform 0.16s, box-shadow 0.16s, color 0.16s, background 0.16s;
+  border: 2px solid transparent;
+}
+.socialLink:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.13);
+  color: var(--icon-color, #1a202c);
+  border-color: var(--icon-color, #1a202c);
+  background: #fdf6f9;
+}
+
+.icon {
+  font-size: 2.1rem;
+  color: var(--icon-color, #1a202c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .socialSection {
+    padding: 5.2rem 0.2rem 2rem 0.2rem;
+  }
+  .abhaImg {
+    width: 140px;
+    margin-bottom: 1.2rem;
+  }
+  .linksGrid {
+    gap: 1.1rem;
+    max-width: 98vw;
+  }
+  .socialLink {
+    padding: 0.8rem 1.1rem;
+    font-size: 1.05rem;
+  }
+  .icon {
+    font-size: 1.5rem;
+  }
+}

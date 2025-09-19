@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./hero.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const navigate = useNavigate();
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
@@ -24,6 +26,12 @@ export default function Hero() {
             Junte-se a nós e descubra que masculinidade e afetação podem (e
             devem!) andar de mãos dadas. 🦩🍷
           </p>
+          <button
+            className={styles.heroButton}
+            onClick={() => navigate("/formulario")}
+          >
+            Solicitar avaliação de entrada na ABHA
+          </button>
         </div>
       </div>
     </section>

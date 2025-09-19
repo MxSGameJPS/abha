@@ -1,28 +1,24 @@
 import React from "react";
 import styles from "./abha.module.css";
+import FallingLeaves from "./FallingLeaves";
 
 export default function Abha() {
   return (
     <section className={styles.abhaSection}>
-      <div>
-        <div className={styles.collage}>
-          <img
-            src="/image/comico.png"
-            alt="Leandro Leite cômico"
-            className={styles.comico}
-          />
-          <img
-            src="/image/comico 2.png"
-            alt="Leandro Leite cômico 2"
-            className={styles.comico2}
-          />
-          <img
-            src="/image/sentado.png"
-            alt="Leandro Leite sentado"
-            className={styles.sentado}
-          />
-        </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img
+          src="/image/abha.png"
+          alt="Colagem ABHA Leandro Leitte"
+          style={{ maxWidth: "100%", height: "auto", display: "block" }}
+        />
       </div>
+        <FallingLeaves leafCount={50} />
       <div className={styles.textBox}>
         <h2>Leandro Leitte e a Arte de Fabricar Alegria</h2>
         <p>

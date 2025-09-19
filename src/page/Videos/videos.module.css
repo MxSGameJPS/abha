@@ -1,0 +1,101 @@
+/* Estilos para a galeria de vídeos TikTok */
+.videosPage {
+  min-height: 100vh;
+  padding: 4rem 1rem 4rem 1rem;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1a202c;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2.5rem;
+}
+
+.videoCard {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  transition: transform 0.18s;
+}
+.videoCard:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.12);
+}
+
+.tiktokFrame {
+  width: 100%;
+  min-width: 260px;
+  max-width: 340px;
+  height: 600px;
+  border: none;
+  background: #000;
+  border-radius: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .tiktokFrame {
+    height: 420px;
+    min-width: 0;
+    max-width: 100vw;
+  }
+  .videosPage {
+    padding: 4rem 0.2rem 2rem 0.2rem;
+  }
+}
+
+.maisCard {
+  background: linear-gradient(135deg, #eae0c8 0%, #e85d95 100%);
+  color: #fff;
+  border-radius: 1.2rem;
+  padding: 2rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.09);
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.maisCard h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.maisBtn {
+  background: #fff;
+  color: #ff0050;
+  font-weight: 700;
+  padding: 0.8rem 2.2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.08);
+  transition: background 0.18s, color 0.18s;
+  margin-top: 0.5rem;
+}
+.maisBtn:hover {
+  background: #ff0050;
+  color: #fff;
+}
